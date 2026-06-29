@@ -125,13 +125,12 @@
         .nav__links a:hover { color: var(--gold); }
 
         .nav__ig {
-            display: inline-flex; align-items: center; gap: 0.4rem;
-            color: var(--cream); font-size: 0.8125rem; font-weight: 600;
-            padding: 0.5rem 1rem; border: 1px solid var(--gold);
-            border-radius: 100px; transition: all 0.25s;
-            letter-spacing: 0.02em;
+            display: inline-flex; align-items: center; gap: 0.35rem;
+            color: var(--cream-muted); font-size: 0.8125rem; font-weight: 500;
+            letter-spacing: 0.06em; text-transform: uppercase;
+            transition: color 0.2s;
         }
-        .nav__ig:hover { background: var(--gold); color: var(--black); }
+        .nav__ig:hover { color: var(--gold); }
 
         .nav__toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
         .nav__toggle span { display: block; width: 22px; height: 2px; background: var(--cream); margin: 5px 0; transition: 0.3s; }
@@ -146,7 +145,8 @@
         .hero__video {
             position: absolute; inset: 0; z-index: 0;
         }
-        .hero__video video, .hero__video img {
+        .hero__video video { display: none; }
+        .hero__video img {
             width: 100%; height: 100%; object-fit: cover;
         }
 
@@ -405,11 +405,34 @@
             .nav__toggle { display: block; }
             .nav__ig-desktop { display: none; }
             .about__features { grid-template-columns: 1fr 1fr; }
+
+            .hero__video video { display: block; width: 100%; height: 100%; object-fit: cover; }
+            .hero__video img.hero-fallback { display: none; }
+
+            .section { padding: clamp(2.5rem, 6vw, 4rem) 1.25rem; }
+            .section__header { margin-bottom: 1.75rem; }
+            .section__subtitle { font-size: 0.9375rem; }
+            .about__text p { font-size: 0.9375rem; line-height: 1.7; margin-bottom: 0.75rem; }
+            .about__text .mobile-hide { display: none; }
+            .highlight-card__overlay h3 { font-size: 1rem; }
+            .highlight-card__overlay p { font-size: 0.75rem; }
+            .menu__category { padding: 1.25rem; }
+            .hours__card { padding: 1.5rem; }
+            .hours__row { padding: 0.7rem 0; font-size: 0.9375rem; }
+            .news__card { padding: 1.25rem; }
+            .news__card p { font-size: 0.875rem; }
+            .contact__icon { width: 38px; height: 38px; }
+            .btn { padding: 0.7rem 1.5rem; font-size: 0.875rem; }
         }
 
         @media (max-width: 480px) {
-            .about__features { grid-template-columns: 1fr; }
-            .gallery__grid { grid-template-columns: repeat(2, 1fr); }
+            .about__features { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+            .about__feature { padding: 1rem; }
+            .about__feature h3 { font-size: 0.8125rem; }
+            .gallery__grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+            .hero__content h1 { font-size: 1.75rem; }
+            .hero__content p { font-size: 0.9375rem; margin-bottom: 1.5rem; }
+            .nav__logo img { height: 44px; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -458,8 +481,8 @@
                 <video autoplay muted loop playsinline poster="hero.jpg" width="1920" height="1080">
                     <source src="hero-video.mp4" type="video/mp4">
                     <source src="hero-video.mov" type="video/quicktime">
-                    <img src="hero.jpg" alt="Nardo's Café Glas gefüllt mit frisch gerösteten Kaffeebohnen" width="1920" height="1080" loading="eager" fetchpriority="high">
                 </video>
+                <img src="hero.jpg" class="hero-fallback" alt="Nardo's Café Glas gefüllt mit frisch gerösteten Kaffeebohnen" width="1920" height="1080" loading="eager" fetchpriority="high">
             </div>
             <div class="hero__overlay"></div>
             <div class="hero__content">
@@ -484,7 +507,7 @@
                         <h2 class="section__title" id="about-title">Euer Brunch Café in Hamburg Neustadt</h2>
                         <div class="about__text">
                             <p>Bei Nardo's in der Grimm 15 dreht sich alles um ehrliches Essen mit besten Zutaten. Unseren Kaffee beziehen wir von Teikei Coffee, die ihre Bohnen per Segelschiff von Kleinbauern in Mexiko nach Hamburg bringen. Unsere Säfte? Frisch gepresst, bio, hausgemacht.</p>
-                            <p>Ob knuspriges Focaccia-Panini, Salat Caprese mit Bio-Mozzarella oder ein Ingwer-Shot für den Extra-Kick: Wir machen Frühstück und Lunch in Hamburg Neustadt so, wie wir es selbst am liebsten mögen.</p>
+                            <p class="mobile-hide">Ob knuspriges Focaccia-Panini, Salat Caprese mit Bio-Mozzarella oder ein Ingwer-Shot für den Extra-Kick: Wir machen Frühstück und Lunch in Hamburg Neustadt so, wie wir es selbst am liebsten mögen.</p>
                         </div>
                         <div class="about__features">
                             <div class="about__feature">
