@@ -199,7 +199,9 @@
 
         .hero__overlay {
             position: absolute; inset: 0; z-index: 1;
-            background: linear-gradient(to bottom, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.7) 100%);
+            background:
+                radial-gradient(ellipse 70% 55% at 50% 45%, rgba(10,10,10,0.6) 0%, transparent 70%),
+                linear-gradient(to bottom, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.8) 100%);
         }
 
         .hero__content {
@@ -219,15 +221,17 @@
 
         .hero__content h1 {
             font-family: var(--font-display);
-            font-size: clamp(2.5rem, 6.5vw, 4.25rem);
-            font-weight: 600; color: #fff; font-style: italic;
-            margin-bottom: 1rem; line-height: 1.08; letter-spacing: -0.01em;
+            font-size: clamp(2rem, 5vw, 3.25rem);
+            font-weight: 600; color: #fff;
+            margin-bottom: 0.875rem; line-height: 1.15; letter-spacing: -0.01em;
+            text-shadow: 0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.4);
         }
 
         .hero__content p {
-            font-size: clamp(1.0625rem, 2.5vw, 1.25rem);
-            color: rgba(255,255,255,0.85);
-            margin-bottom: 2.25rem; max-width: 520px; margin-inline: auto;
+            font-size: clamp(1rem, 2.2vw, 1.125rem);
+            color: rgba(255,255,255,0.92);
+            margin-bottom: 2rem; max-width: 480px; margin-inline: auto;
+            text-shadow: 0 1px 12px rgba(0,0,0,0.5);
         }
 
         .hero__actions { display: flex; gap: 0.875rem; justify-content: center; flex-wrap: wrap; }
@@ -263,9 +267,8 @@
         }
         .section__title {
             font-family: var(--font-display);
-            font-size: clamp(1.875rem, 4.5vw, 2.75rem);
-            font-weight: 600; color: var(--cream); margin-bottom: 1.125rem; line-height: 1.2;
-            font-style: italic;
+            font-size: clamp(1.625rem, 3.5vw, 2.25rem);
+            font-weight: 600; color: var(--cream); margin-bottom: 1rem; line-height: 1.25;
         }
         .section__subtitle {
             font-size: 1.0625rem; color: var(--text-muted); max-width: 580px; line-height: 1.75;
@@ -316,7 +319,7 @@
             position: absolute; bottom: 0; left: 0; right: 0;
             padding: 1.5rem; background: linear-gradient(to top, rgba(10,10,10,0.88) 0%, transparent 100%);
         }
-        .highlight-card__overlay h3 { font-size: 1.1875rem; font-weight: 600; color: #fff; margin-bottom: 0.3rem; font-family: var(--font-display); font-style: italic; }
+        .highlight-card__overlay h3 { font-size: 1.0625rem; font-weight: 600; color: #fff; margin-bottom: 0.3rem; font-family: var(--font-display); }
         .highlight-card__overlay p { font-size: 0.8125rem; color: rgba(255,255,255,0.75); }
 
         /* === MENU === */
@@ -329,8 +332,8 @@
         }
         .menu__category:hover { border-color: var(--gold); transform: translateY(-3px); }
         .menu__category h3 {
-            font-family: var(--font-display); font-style: italic;
-            font-size: 1.375rem; font-weight: 600; color: var(--gold);
+            font-family: var(--font-display);
+            font-size: 1.25rem; font-weight: 600; color: var(--gold);
             margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
         }
         .menu__items { list-style: none; }
@@ -365,7 +368,7 @@
             background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
             padding: 2.5rem; text-align: center;
         }
-        .hours__cta h3 { font-family: var(--font-display); font-style: italic; font-size: 1.5rem; margin-bottom: 0.75rem; }
+        .hours__cta h3 { font-family: var(--font-display); font-size: 1.375rem; margin-bottom: 0.75rem; }
         .hours__cta p { color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem; line-height: 1.6; }
 
         /* === GALLERY === */
@@ -467,7 +470,7 @@
         .legal { background: var(--charcoal); display: none; padding-top: 100px; }
         .legal.is-active { display: block; }
         .legal__content { max-width: 800px; margin: 0 auto; padding: 2rem clamp(1.25rem, 4vw, 2rem); }
-        .legal__content h2 { font-family: var(--font-display); font-style: italic; font-size: 1.875rem; margin-bottom: 1.5rem; color: var(--cream); }
+        .legal__content h2 { font-family: var(--font-display); font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--cream); }
         .legal__content h3 { font-size: 1.125rem; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--cream); }
         .legal__content p { color: var(--text-muted); margin-bottom: 1rem; line-height: 1.7; }
         .legal__back { display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem; color: var(--gold); font-weight: 500; }
@@ -610,8 +613,8 @@
             <div class="hero__overlay"></div>
             <div class="hero__content">
                 <p class="hero__eyebrow">Hamburg Neustadt</p>
-                <h1>Brunch, Lunch &amp; Säfte mit Seele</h1>
-                <p>Euer Brunch Café in Hamburg Neustadt. Frisch zubereitet, von Herzen gemacht, jeden Tag neu serviert.</p>
+                <h1>Brunch, Lunch &amp; Säfte</h1>
+                <p>Euer Brunch Café in Hamburg Neustadt.</p>
                 <div class="hero__actions">
                     <a href="#speisekarte" class="btn btn--gold">Speisekarte ansehen</a>
                     <a href="mailto:info@nardos-cafe.de?subject=Tischreservierung%20Nardo%27s%20Caf%C3%A9" class="btn btn--ghost">Tisch anfragen</a>
@@ -631,8 +634,7 @@
                         <p class="section__label">Über uns</p>
                         <h2 class="section__title" id="about-title">Euer Brunch Café in Hamburg Neustadt</h2>
                         <div class="about__text">
-                            <p>Mitten in der Grimm 15 servieren wir, was wir selbst am liebsten essen: ehrliches Frühstück, knuspriger Lunch und Säfte, die nach Sommer schmecken. Unseren Kaffee beziehen wir von Teikei Coffee, deren Bohnen per Segelschiff von Kleinbauern in Mexiko nach Hamburg reisen, fair gehandelt und mit Respekt vor dem Ursprung.</p>
-                            <p class="mobile-hide">Jeder Teller verlässt unsere Küche mit derselben Sorgfalt: knuspriges Focaccia-Panini, Salat Caprese mit bestem Bio-Mozzarella oder ein Ingwer-Shot für den kleinen Energiekick zwischendurch. Kommt vorbei, setzt euch hin und lasst den Tag bei uns beginnen.</p>
+                            <p>Mitten in der Grimm 15 servieren wir, was wir selbst am liebsten essen: ehrliches Frühstück, knuspriger Lunch und Säfte, die nach Sommer schmecken. Unseren Kaffee beziehen wir von Teikei Coffee, fair gehandelt aus Mexiko.</p>
                         </div>
                         <div class="about__features">
                             <div class="about__feature">
@@ -678,7 +680,7 @@
                 <div class="section__header fade-in">
                     <p class="section__label">Unsere Highlights</p>
                     <h2 class="section__title" id="highlights-title">Was euch bei uns erwartet</h2>
-                    <p class="section__subtitle">Von knusprigem Focaccia-Panini bis zu hausgemachten Bio-Säften. Hier ein kleiner Vorgeschmack auf eure nächste Mahlzeit.</p>
+                    <p class="section__subtitle">Ein kleiner Vorgeschmack auf eure nächste Mahlzeit.</p>
                 </div>
                 <div class="highlights__grid">
                     <div class="highlight-card fade-in">
@@ -721,7 +723,7 @@
                 <div class="section__header fade-in">
                     <p class="section__label">Speisekarte</p>
                     <h2 class="section__title" id="menu-title">Unsere Karte</h2>
-                    <p class="section__subtitle">Frisch zubereitet mit ausgewählten Zutaten. Unsere Karte wechselt saisonal, die Qualität bleibt immer gleich hoch.</p>
+                    <p class="section__subtitle">Frisch zubereitet, saisonal wechselnd.</p>
                 </div>
                 <div class="menu__grid">
                     <div class="menu__category fade-in">
@@ -941,7 +943,10 @@
                         </div>
                         <div class="contact__actions">
                             <a href="mailto:info@nardos-cafe.de?subject=Tischreservierung%20Nardo%27s%20Caf%C3%A9" class="btn btn--gold">Tisch anfragen</a>
-                            <a href="https://www.google.com/maps/search/?api=1&query=Grimm+15+20457+Hamburg" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Route planen</a>
+                            <a href="https://instagram.com/nardoscafehamburg" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                                Instagram
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1030,7 +1035,10 @@
     <!-- Sticky Mobile CTA -->
     <div class="mobile-cta" aria-hidden="false">
         <a href="mailto:info@nardos-cafe.de?subject=Tischreservierung%20Nardo%27s%20Caf%C3%A9" class="btn btn--gold">Tisch anfragen</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Grimm+15+20457+Hamburg" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">Route</a>
+        <a href="https://instagram.com/nardoscafehamburg" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Instagram
+        </a>
     </div>
 
     <!-- Cookie Banner -->
