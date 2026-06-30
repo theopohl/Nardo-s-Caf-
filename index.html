@@ -76,17 +76,17 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --black: #0a0a0a;
-            --charcoal: #1c1c1c;
-            --dark-warm: #242220;
-            --card: #2a2724;
-            --border: #3a3632;
+            --black: #0d0d0c;
+            --charcoal: #232120;
+            --dark-warm: #2b2825;
+            --card: #34302b;
+            --border: #4a443d;
             --gold: #C8A961;
             --gold-hover: #d4b872;
             --cream: #FFF8F0;
             --cream-muted: #e8ddd0;
-            --text: #d4cdc4;
-            --text-muted: #9a9189;
+            --text: #ddd6cc;
+            --text-muted: #ada397;
             --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             --font-display: ui-serif, Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Times New Roman', serif;
             --max-w: 1200px;
@@ -187,7 +187,6 @@
         }
 
         .hero__video { position: absolute; inset: 0; z-index: 0; }
-        .hero__video video { display: none; }
         .hero__video img {
             width: 100%; height: 100%; object-fit: cover;
             animation: kenBurns 18s ease-in-out infinite alternate;
@@ -259,7 +258,11 @@
         @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
 
         /* === SECTIONS === */
-        .section { padding: clamp(4.5rem, 11vw, 8rem) clamp(1.25rem, 4vw, 2rem); }
+        .section { padding: clamp(4.5rem, 11vw, 8rem) clamp(1.25rem, 4vw, 2rem); position: relative; }
+        .section::before {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 56px; height: 2px; background: var(--gold); opacity: 0.6;
+        }
 
         .section__label {
             font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em;
@@ -286,9 +289,10 @@
         .about__features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.75rem; }
         .about__feature {
             background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-            padding: 1.375rem; text-align: center; transition: border-color 0.25s, transform 0.25s;
+            padding: 1.375rem; text-align: center; transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
         }
-        .about__feature:hover { border-color: var(--gold); transform: translateY(-2px); }
+        .about__feature:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,0.25); }
         .about__feature-icon { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; color: var(--gold); }
         .about__feature h3 { font-size: 0.875rem; font-weight: 600; color: var(--cream); }
 
@@ -328,9 +332,10 @@
         .menu__category {
             background: var(--card); border: 1px solid var(--border);
             border-radius: var(--radius); padding: 2rem;
-            transition: border-color 0.3s, transform 0.3s;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
         }
-        .menu__category:hover { border-color: var(--gold); transform: translateY(-3px); }
+        .menu__category:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 10px 26px rgba(0,0,0,0.28); }
         .menu__category h3 {
             font-family: var(--font-display);
             font-size: 1.25rem; font-weight: 600; color: var(--gold);
@@ -354,6 +359,7 @@
         .hours__card {
             background: var(--card);
             border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
         }
         .hours__row {
             display: flex; justify-content: space-between; padding: 0.875rem 0;
@@ -367,6 +373,7 @@
         .hours__cta {
             background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
             padding: 2.5rem; text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
         }
         .hours__cta h3 { font-family: var(--font-display); font-size: 1.375rem; margin-bottom: 0.75rem; }
         .hours__cta p { color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem; line-height: 1.6; }
@@ -390,9 +397,10 @@
         .news__card {
             background: var(--card); border: 1px solid var(--border);
             border-radius: var(--radius); padding: 1.75rem;
-            transition: border-color 0.3s, transform 0.3s;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
         }
-        .news__card:hover { border-color: var(--gold); transform: translateY(-3px); }
+        .news__card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.25); }
         .news__date { font-size: 0.8125rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
         .news__card h3 { font-size: 1.125rem; font-weight: 600; color: var(--cream); margin-bottom: 0.5rem; }
         .news__card p { color: var(--text-muted); font-size: 0.9375rem; line-height: 1.6; }
@@ -511,9 +519,6 @@
             .nav__ig-desktop { display: none; }
             .about__features { grid-template-columns: 1fr 1fr; }
 
-            .hero__video video { display: block; width: 100%; height: 100%; object-fit: cover; }
-            .hero__video img.hero-fallback { display: none; }
-
             .section { padding: clamp(2.75rem, 6vw, 4rem) 1.25rem; }
             .section__header { margin-bottom: 1.75rem; }
             .section__subtitle { font-size: 0.9375rem; }
@@ -601,10 +606,6 @@
         <!-- Hero -->
         <section class="hero" aria-label="Willkommen bei Nardo's Café">
             <div class="hero__video">
-                <video autoplay muted loop playsinline poster="hero.jpg" width="1920" height="1080">
-                    <source src="hero-video.mp4" type="video/mp4">
-                    <source src="hero-video.mov" type="video/quicktime">
-                </video>
                 <picture>
                     <source srcset="hero.webp" type="image/webp">
                     <img src="hero.jpg" class="hero-fallback" alt="Nardo's Café Glas gefüllt mit frisch gerösteten Kaffeebohnen" width="1920" height="1080" loading="eager" fetchpriority="high">
